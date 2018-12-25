@@ -15,7 +15,10 @@ app.use(bodyParser.json());
 
 //connect to mongoose
 mongoose
-  .connect(db)
+  .connect(
+    db,
+    { useNewUrlParser: true }
+  )
   .then(() => console.log("MongoDb connected"))
   .catch(err => console.log(err));
 //app.get("/", (req, res) => res.send("Welcome fellas!!"));
